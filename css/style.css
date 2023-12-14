@@ -549,26 +549,34 @@ a {
 .footer-subscribe-box {
     display: flex;
     flex-direction: column;
-  }
-  
-  .footer-form {
+}
+.footer-subscribe-text  {
+    margin-bottom: 16px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+}
+.footer-form {
     display: flex;
     gap: 24px;
   }
   
-  .footer-input {
+.footer-input {
     width: 264px;
     height: 40px;
     border: 1px solid #ffffff;
     background-color: transparent;
     font-size: 12px;
-    line-height: 1.5;
+    line-height: 2;
     letter-spacing: 0.04em;
     padding-left: 16px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
     border-radius: 4px;
     color: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   }
   
   .foooter-input::placeholder {
