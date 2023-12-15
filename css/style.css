@@ -469,8 +469,6 @@ a {
 /* FOOTER */
 .footer {
     background-color: #2E2F42;
-    width: 1440px;
-    height: 312px;
     padding: 100px 0;
 }
 .footer-wrapper {
@@ -507,7 +505,7 @@ a {
     letter-spacing: 0.02em;
 }
 .footer-social-box {
-    margin-right: 692px;
+    margin-right: auto;
 }
 .footer-social-text {
     color: #FFF;
@@ -611,108 +609,131 @@ a {
 
 .backdrop {
     position: fixed;
-    top: 0;
-    left: 0;
-    opacity: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(46, 47, 66, 0.4);
+    top: 0;
+    left: 0;
+    opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
+      visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
 }
-
 .modal-box {
-    position: absolute;
     width: 408px;
     min-height: 584px;
+    background-color: #fcfcfc;
     border-radius: 4px;
+    position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, 50%);
+    transform: translate(-50%, -50%);
     padding: 72px 24px 24px 24px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
     width: 24px;
     height: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
     padding: 0;
-    top: 24px;
+    position: absolute;
     right: 24px;
+    top: 24px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #e7e9fc;
     cursor: pointer;
-    
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+  
 .modal-btn:hover,
 .modal-btn:focus,
 .modal-btn:active {
-    background-color: #404BBF;
+    background-color: #404bbf;
+    fill: #ffffff;
     border: none;
 }
+  
 .modal-btn-icon {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+  
 .modal-text {
-    color: #2E2F42;
+    color: #2e2f42;
     text-align: center;
-    font-family: Roboto, sans-serif;
+    font-family: Roboto;
     font-size: 16px;
-    font-weight: 500;
     font-style: normal;
+    font-weight: 500;
     line-height: 1.5;
     letter-spacing: 0.02em;
     margin-bottom: 16px;
 }
-.modal-form {
-}
-.modal-entry-field-box {
+  
+.modal-entry-field {
     margin-bottom: 8px;
 }
-.modal-label {
-    display: block;
-    color: #8E8F99;
-    font-size: 12px;
-    font-weight: 400;
-    letter-spacing: 0.04em;
-    line-height: 1.17;
-    margin-bottom: 4px;
-}
-.modal-input-box {
-    position: relative;
-}
+  
 .modal-input {
+    padding-left: 38px;
     width: 100%;
     height: 40px;
-    padding-left: 38px;
-    background-color: transparent;
-    border: 1px solid rgba(46, 47, 66, 0.7);
     border-radius: 4px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    background-color: transparent;
+    box-shadow: none;
+    outline: transparent;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+  
 .modal-input:hover,
 .modal-input:focus {
     border: 1px solid #4d5ae5;
 }
+  
+.modal-input:focus + .modal-icon {
+    fill: #4d5ae5;
+}
+  
+.modal-label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 1.17;
+    color: #8e8f99;
+}
+  
+.modal-input-box {
+    position: relative;
+}
+  
 .modal-icon {
+    fill: #2e2f42;
     position: absolute;
-    fill: #2E2F42;
+    left: 16px;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
 }
-.modal-input + .modal-icon:focus {
-    fill: #4D5AE5;
-}
-.modal-comment-box {
+  
+.comment {
     margin-bottom: 16px;
 }
+  
 .modal-textarea {
     width: 100%;
     height: 120px;
@@ -720,47 +741,83 @@ a {
     line-height: 1.17;
     letter-spacing: 0.04em;
     color: rgba(46, 47, 66, 0.4);
-    background-color: transparent;
-    outline: transparent;
+    padding: 8px 16px;
     border-radius: 4px;
     border: 1px solid rgba(46, 47, 66, 0.4);
-    padding: 8px 16px;
+    background-color: transparent;
+    box-shadow: none;
+    outline: transparent;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
+    resize: none;
 }
+  
+.modal-textarea::placeholder {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 1.16;
+    color: #2e2f4266;
+}
+  
 .modal-textarea:hover,
 .modal-textarea:focus {
-    border: 1px solid #4D5AE5;
+    border: 1px solid #4d5ae5;
 }
-.modal-privacy-box {
-}
-.input-checkbox {
-}
+  
+  
 .check-text {
-    color: #8E8F99;
+    color: #8e8f99;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
 }
-.checkbox-icon {
-}
-.privacy-link {
-    color: #4D5AE5;
+  
+.check-text a {
+    color: #4d5ae5;
     text-decoration: underline;
 }
-.submit-btn {
-    display: block;
-    text-align: center;
-    margin: 0 auto;
-    background-color: #4D5AE5;
-    color: #FFFFFF;
-    font-family: Roboto, sans-serif;
+  
+.invisible-checkbox {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    box-shadow: none;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 2px;
+    margin-right: 12px;
+    fill: transparent;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+  
+.input-checkbox:checked + .check-text .invisible-checkbox {
+    background-color: #404bbf;
+    border: none;
+    fill: #f4f4fd;
+}
+  
+.down-entry-field {
+    margin-bottom: 24px;
+}
+  
+.modal-send-btn {
+    background-color: #4d5ae5;
+    color: #ffffff;
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 16px;
     letter-spacing: 0.04em;
+    text-align: center;
+    cursor: pointer;
     line-height: 1.5;
+    display: block;
+    margin: auto;
     min-width: 169px;
     height: 56px;
+    border: none;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
