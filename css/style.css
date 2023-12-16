@@ -670,7 +670,6 @@ a {
 .modal-btn-icon {
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-  
 .modal-text {
     color: #2e2f42;
     text-align: center;
@@ -777,8 +776,19 @@ a {
     color: #4d5ae5;
     text-decoration: underline;
 }
-  
-.invisible-checkbox .vissually-hidden {
+.vissually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}  
+.invisible-checkbox + .vissually-hidden {
     display: inline-flex;
     align-items: center;
     justify-content: center;
