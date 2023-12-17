@@ -662,6 +662,7 @@ a {
 .modal-btn:focus {
     background-color: #404bbf;
     border: none;
+    fill: #FFFFFF;
 }
 .modal-btn .modal-btn-icon:hover,
 .modal-btn .modal-btn-icon:focus {
