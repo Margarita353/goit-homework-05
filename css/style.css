@@ -659,15 +659,16 @@ a {
 }
   
 .modal-btn:hover,
-.modal-btn:focus,
-.modal-btn:active {
+.modal-btn:focus {
     background-color: #404bbf;
-    fill: #ffffff;
     border: none;
 }
-  
-.modal-btn-icon {
-    fill: #2e2f42;
+.modal-btn .modal-btn-icon:hover,
+.modal-btn .modal-btn-icon:focus {
+    fill: #FFFFFF;
+}
+.modal-btn .modal-btn-icon {
+    fill: #2E2F42;
     position: absolute;
     top: 50%;
     left: 50%;
